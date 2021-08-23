@@ -125,11 +125,15 @@ class AddressBook {
         "\nemail : " +this.email;
     }
 }
+// Array to save address details
+let detailArray = new Array();
+
 //object
 let detail1 = new AddressBook("Yash", "Purwar", "Kadaura", "Kanpur", "UttarPradesh", 285203, 918052493051, "yashpurwar.yash@gmail.com");
-//exception handling
-try {
-    console.log(detail1.toString());
-} catch (e) {
-    console.error(e);
-}
+detailArray.push(detail1);
+
+let detail2 = new AddressBook("Ankit", "Purwar", "Orai", "Orai", "UttarPradesh", 285258, 918052493052, "yashpurwar@gmail.com");
+detailArray.push(detail2);
+
+// Method to print details 
+detailArray.forEach(details => console.log(details.toString()));
