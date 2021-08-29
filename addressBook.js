@@ -171,3 +171,22 @@ function searchByName() {
     }
 }
 searchByName();
+
+function deleteByFirstName(){
+    flag = false;
+    let personName = prompt("Enter Person name to delete contact details :")
+    detailArray.forEach (element => {
+        if(element.firstName == personName){
+            let index = detailArray.indexOf(element)
+            detailArray.splice(index)
+            console.log("Deleted Successfull");
+            flag = true;
+        }
+    })
+    if (flag == false){
+            console.log("Contact Not Found");
+    }
+}
+deleteByFirstName();
+
+detailArray.forEach(details => console.log(details.toString()));
