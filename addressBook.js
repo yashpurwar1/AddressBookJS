@@ -1,5 +1,6 @@
 //Welcome msg
 console.log("Welcome to the AddressBookService");
+const prompt = require('Prompt-sync')();
 
 class AddressBook {
     firstName;
@@ -137,3 +138,36 @@ detailArray.push(detail2);
 
 // Method to print details 
 detailArray.forEach(details => console.log(details.toString()));
+
+console.log("\nAdd Contacts")
+function addContacts() {
+    let fName=prompt("Enter First Name :");
+    let lName=prompt("Enter Last Name :");
+    let address=prompt("Enter Address: ");
+    let city = prompt("Enter City :");
+    let state = prompt("Enter State :");
+    let zip = prompt("Enter zip :");
+    let phone = prompt("Enter Phone Number :");
+    let email = prompt("Enter Email :");
+    let person = new AddressBook(fName,lName,address,city,state,zip,phone,email);
+    detailArray.push(person);
+}
+//addContacts();
+
+
+//UC4 - ability to find exiting contact person using their name
+function searchByName() {
+    let flag = false;
+    let personName = prompt("Enter Person name to find the contact details :")
+    detailArray.forEach(element => {
+        if (element.firstName == personName) {
+            console.log("\nContact Found \n"+ element);
+            flag = true;
+        }
+    }
+    )
+    if(flag == false) {
+        console.log("Contact not find");
+    }
+}
+searchByName();
