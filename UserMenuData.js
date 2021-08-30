@@ -7,7 +7,8 @@ class UserMenu {
         console.log("Press 3 to edit contact in the Address Book")
         console.log("Press 4 to delete contact from the Address Book");
         console.log("Press 5 to get the number of contacts in the Address Book");
-        console.log("Press 6 to exit");
+        console.log("Press 6 to search person by City or State in the Address Book");
+        console.log("Press 7 to exit");
         console.log();
         return parseInt(prompt("Enter your choice : "));
        }

@@ -101,6 +101,44 @@ class AddressBookData {
         });
         return personInfoList;
     }
+
+    searchContact(personInfoList) {
+        console.log("Press 1 to search by City");
+        console.log("Press 2 to search by State");
+        let option = parseInt(prompt("Enter your choice : "));
+        if(personInfoList.length == 0){
+            console.log("Address book empty");
+        }
+        else{
+            switch(option) {
+                case 1:
+                    let city = prompt("Enter the City you want to search the person for : ");
+                    personInfoList.forEach(element => {
+                        if( (element.city === city) == true ) {
+                            console.log(element);
+                        }
+                        else{
+                            console.log("Record not found");
+                        }
+                    });
+                    break;
+                case 2:
+                    let state = prompt("Enter the State you want to search the person for : ");
+                    personInfoList.forEach(element => {
+                        if( (element.state === state) == true ) {
+                            console.log(element);
+                        }
+                        else{
+                            console.log("Record not found");
+                        }
+                    });
+                    break;
+                default:
+                    console.log("You have entered invalid input!");
+                    break;
+            }
+        }
+    }
 }
 
 module.exports = AddressBookData;

@@ -34,8 +34,12 @@ while( flag ) {
             console.log();
             break;
         case 6:
+            addressBookData.searchContact(personInfoList);
+            console.log();
+            break;   
+        case 7:
             flag = false;
-            break;    
+            break;       
         default:
             console.log("You have entered invalid input!");
             flag = false;
