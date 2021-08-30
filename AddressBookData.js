@@ -106,8 +106,10 @@ class AddressBookData {
         console.log("Press 1 to search by City");
         console.log("Press 2 to search by State");
         let option = parseInt(prompt("Enter your choice : "));
-        if(personInfoList.length == 0){
-            console.log("Address book empty");
+        let count = 0;
+
+        if (personInfoList.length==0){
+            console.log("List is empty hence count = 0");
         }
         else{
             switch(option) {
@@ -116,22 +118,20 @@ class AddressBookData {
                     personInfoList.forEach(element => {
                         if( (element.city === city) == true ) {
                             console.log(element);
-                        }
-                        else{
-                            console.log("Record not found");
+                            count++;
                         }
                     });
+                    console.log("Number of contact persons that is based on the count of City : " +count);
                     break;
                 case 2:
                     let state = prompt("Enter the State you want to search the person for : ");
                     personInfoList.forEach(element => {
                         if( (element.state === state) == true ) {
                             console.log(element);
-                        }
-                        else{
-                            console.log("Record not found");
+                            count++;
                         }
                     });
+                    console.log("Number of contact persons that is based on the count of State is : " +count);
                     break;
                 default:
                     console.log("You have entered invalid input!");
