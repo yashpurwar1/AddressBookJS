@@ -190,3 +190,7 @@ function deleteByFirstName(){
 deleteByFirstName();
 
 detailArray.forEach(details => console.log(details.toString()));
+
+// number of contact in address book
+console.log("Number of contacts in the address book is : " +detailArray.length);
+
